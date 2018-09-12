@@ -1,0 +1,8 @@
+// githubで検索
+
+$url = "https://github.com/search?q=";
+beginclipboardread;
+copyword;
+$word = getclipboard;
+openbyshell $url + $word;
+endmacro;
