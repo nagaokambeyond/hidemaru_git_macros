@@ -1,0 +1,7 @@
+// git status
+
+$$git = "git.exe status ";
+$$cmd = $$git;
+$$dir = directory2 + "\\";
+runex $$cmd,0,0,"",7,"",0,"",2,$$dir,0,0,6;
+endmacro;

@@ -36,6 +36,12 @@ git blame -L 5,13 ファイル名
 git diff -- ファイル名
 ```
 
+## gitstatus.mac
+* リポジトリの状況を表示する
+```
+git status
+```
+
 ## github_search.mac
 * カーソルのある単語でgithubを検索する
   * shaハッシュでgithubを検索したいときなどに使う
