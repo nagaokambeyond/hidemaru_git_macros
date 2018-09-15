@@ -1,8 +1,0 @@
-// git blame -L startlineno, endlinenoファイル名
-
-$git = "git.exe blame -L " + str(seltopy) + "," + str(selendy) + " ";
-$cmd = $git + filename2;
-message $cmd;
-$dir = directory2 + "\\";
-runex $cmd,0,0,"",4,"",0,"",2,$dir,0,0,6;
-endmacro;
