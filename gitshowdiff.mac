@@ -11,12 +11,12 @@ beginclipboardread;
 $$commit_hash = getclipboard;
 
 if (strlen($$commit_hash) != 40) {
-  message "commit hashがクリップボードにありません。";
+  message "コミットハッシュがクリップボードにありません。";
   endmacro;
 }
 $$diff_file = getenv("TMP") + "\\" + basename + $$commit_hash + ".diff";
 
-// commit hashの内容をファイルにする
+// コミットハッシュの内容をファイルにする
 $$git = "git.exe show ";
 $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$diff_file;
 run $$cmd;
