@@ -3,7 +3,7 @@
 $$tool = "C:\\Program Files\\WinMerge\\WinMergeU.exe";
 
 if (existfile($$tool) == false) {
-  message $$tool + "\nが存在しません。";
+  message "ツールが存在しません。\n" + $$tool;
   endmacro;
 }
 
@@ -20,9 +20,17 @@ $$diff_file = getenv("TMP") + "\\" + basename + $$commit_hash + ".diff";
 $$git = "git.exe show ";
 $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$diff_file;
 run $$cmd;
+if (result == false) {
+  message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
+  endmacro;
+}
 
 // toolの実行する
 $$cmd = $$tool + " " + filename2 + " " + $$diff_file;
 run $$cmd;
+if (result == false) {
+  message "比較ツール実行時にエラーが発生しました。\n" + $$cmd;
+  endmacro;
+}
 
 endmacro;

@@ -7,7 +7,10 @@
 * 秀丸エディタ 8.8.3
 * WinMerge 日本語版 2.14.0+-jp-152
 
-## gitlog.mac
+## インストール方法
+
+## 使い方
+### gitlog.mac
 * シンプルなログを表示する
 * 修正点をつかみたいときに使う
 * 実行結果は、アウトプット枠に出力する
@@ -15,14 +18,21 @@
 git log ファイル名
 ```
 
-## gitlogp.mac
+### gitlog_format.mac
+* 書式をつけてログを出力する
+* 実行結果は、アウトプット枠に出力する
+```
+git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名
+```
+
+### gitlogp.mac
 * 詳細なログを表示する
 * 実行結果は、アウトプット枠に出力する
 ```
 git log -p ファイル名
 ```
 
-## gitshowdiff.mac
+### gitshowdiff.mac
 * 指定のコミットと外部ツールを使った比較ができる
 * git showで使うコミットハッシュがクリップボードにコピーされている状態で使うこと
 * diffツールがインストールされていること
@@ -31,7 +41,7 @@ git show コミットハッシュ:ファイル名 > tempファイル名
 diffツール ファイル名 tempファイル名
 ```
 
-## gitblame.mac
+### gitblame.mac
 * 各行のコミットハッシュと修正したアカウントを確認したいときに使う
 * 選択した行の範囲でコミットハッシュと修正したアカウントを確認したいときに使う
   * 5行目から13行目までのコミットハッシュと修正したアカウントを確認する例
@@ -41,20 +51,20 @@ git blame ファイル名
 git blame -L 5,13 ファイル名
 ```
 
-## gitdiff.mac
+### gitdiff.mac
 * まだコミットが済んでいない差分を表示する
 * 実行結果は、アウトプット枠に出力する
 ```
 git diff -- ファイル名
 ```
 
-## gitstatus.mac
+### gitstatus.mac
 * リポジトリの状況を表示する
 * 実行結果は、アウトプット枠に出力する
 ```
 git status
 ```
 
-## github_search.mac
+### github_search.mac
 * カーソルのある単語でgithubを検索する
   * コミットハッシュでgithubを検索したいときなどに使う
