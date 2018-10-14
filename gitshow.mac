@@ -10,7 +10,7 @@ if (strlen($$commit_hash) != 40) {
 $$file = getenv("TMP") + "\\" + basename + $$commit_hash + "." + filetype;
 
 if (existfile($$file) == false) {
-// コミットハッシュの内容をファイルにする
+  // コミットハッシュの内容をファイルにする
   $$git = "git.exe show ";
   $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$file;
   run $$cmd;

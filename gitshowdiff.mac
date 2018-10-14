@@ -14,19 +14,21 @@ if (strlen($$commit_hash) != 40) {
   message "コミットハッシュがクリップボードにありません。";
   endmacro;
 }
-$$diff_file = getenv("TMP") + "\\" + basename + $$commit_hash + ".diff";
+$$file = getenv("TMP") + "\\" + basename + $$commit_hash + "." + filetype;
 
-// コミットハッシュの内容をファイルにする
-$$git = "git.exe show ";
-$$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$diff_file;
-run $$cmd;
-if (result == false) {
-  message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
-  endmacro;
+if (existfile($$file) == false) {
+  // コミットハッシュの内容をファイルにする
+  $$git = "git.exe show ";
+  $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$file;
+  run $$cmd;
+  if (result == false) {
+    message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
+    endmacro;
+  }
 }
 
 // toolの実行する
-$$cmd = $$tool + " " + filename2 + " " + $$diff_file;
+$$cmd = $$tool + " " + filename2 + " " + $$file;
 run $$cmd;
 if (result == false) {
   message "比較ツール実行時にエラーが発生しました。\n" + $$cmd;
