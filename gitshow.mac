@@ -1,0 +1,24 @@
+﻿// git show
+
+beginclipboardread;
+$$commit_hash = getclipboard;
+
+if (strlen($$commit_hash) != 40) {
+  message "コミットハッシュがクリップボードにありません。";
+  endmacro;
+}
+$$file = getenv("TMP") + "\\" + basename + $$commit_hash + "." + filetype;
+
+if (existfile($$file) == false) {
+// コミットハッシュの内容をファイルにする
+  $$git = "git.exe show ";
+  $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$file;
+  run $$cmd;
+  if (result == false) {
+    message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
+    endmacro;
+  }
+}
+
+openfile "/r " + $$file;
+endmacro;
