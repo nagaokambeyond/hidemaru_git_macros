@@ -7,13 +7,48 @@ if (existfile($$tool) == false) {
   endmacro;
 }
 
-beginclipboardread;
-$$commit_hash = getclipboard;
+disabledraw;
 
+// メニュー用にログを取得する
+$$git = "git.exe log --date=iso --pretty=format:\"[%ad] %H %an : %s\" ";
+$$cmd = $$git + filename2;
+$$dir = directory2 + "\\";
+##main_handle = hidemaruhandle(0);
+$$log = getenv("TMP") + "\\" + basename + "log" + "." + filetype;
+runex $$cmd,0,0,"",2,$$log,0,"",2,$$dir,0,0,encode;
+
+// 隠しタブにメニュー用にログを表示する
+openfile "/h " + $$log;
+##tmp_handle = hidemaruhandle(0);
+##count = 0;
+while (##count <= 10) {
+  if (result == false){
+    break;
+  }
+  beginclipboardread;
+  beginlinesel 0;
+  copy;
+  $$menu[##count] = getclipboard;
+  down;
+  ##count = ##count + 1;
+}
+enabledraw;
+setactivehidemaru ##main_handle;
+closehidemaru ##tmp_handle;
+
+// メニューを表示する
+menuarray $$menu,##count;
+
+$$commit_hash = "";
+##idx = result;
+if (##idx > 0) {
+  // 選択されたメニューからコミットハッシュを取り出す
+  $$commit_hash = midstr($$menu[##idx - 1], 28, 40);
+}
 if (strlen($$commit_hash) != 40) {
-  message "コミットハッシュがクリップボードにありません。";
   endmacro;
 }
+
 $$file = getenv("TMP") + "\\" + basename + $$commit_hash + "." + filetype;
 
 if (existfile($$file) == false) {
