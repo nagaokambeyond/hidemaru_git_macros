@@ -3,7 +3,7 @@
 $$tool = "C:\\Program Files\\WinMerge\\WinMergeU.exe";
 
 if (existfile($$tool) == false) {
-  message "ツールが存在しません。\n" + $$tool;
+  message "比較ツールが存在しません。\n" + $$tool;
   endmacro;
 }
 
@@ -13,15 +13,20 @@ disabledraw;
 $$git = "git.exe log --date=iso --pretty=format:\"[%ad] %H %an : %s\" ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
-##main_handle = hidemaruhandle(0);
-$$log = getenv("TMP") + "\\" + basename + "log" + "." + filetype;
+##current_handle = hidemaruhandle(0);
+$$log = getenv("TMP") + "\\" + basename2 + "log" + "." + filetype;
 runex $$cmd,0,0,"",2,$$log,0,"",2,$$dir,0,0,encode;
+if (existfile($$log, 2) == 0) {
+  endmacro;
+}
 
-// 隠しタブにメニュー用にログを表示する
+// 隠しタブにログを表示する
 openfile "/h " + $$log;
 ##tmp_handle = hidemaruhandle(0);
-##count = 0;
-while (##count <= 10) {
+##start = 1;
+##count = ##start;
+$$menu[0] = "■■■比較するコミットを選択してください";
+while (##count <= 20 + ##start) {
   if (result == false){
     break;
   }
@@ -33,15 +38,15 @@ while (##count <= 10) {
   ##count = ##count + 1;
 }
 enabledraw;
-setactivehidemaru ##main_handle;
+setactivehidemaru ##current_handle;
 closehidemaru ##tmp_handle;
 
 // メニューを表示する
 menuarray $$menu,##count;
+##idx = result;
 
 $$commit_hash = "";
-##idx = result;
-if (##idx > 0) {
+if (##idx > ##start) {
   // 選択されたメニューからコミットハッシュを取り出す
   $$commit_hash = midstr($$menu[##idx - 1], 28, 40);
 }
@@ -49,21 +54,18 @@ if (strlen($$commit_hash) != 40) {
   endmacro;
 }
 
-$$file = getenv("TMP") + "\\" + basename + $$commit_hash + "." + filetype;
-
-if (existfile($$file) == false) {
-  // コミットハッシュの内容をファイルにする
-  $$git = "git.exe show ";
-  $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$file;
-  run $$cmd;
-  if (result == false) {
-    message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
-    endmacro;
-  }
+// コミットハッシュの内容をファイルにする
+$$file = getenv("TMP") + "\\" + basename2 + $$commit_hash + "." + filetype;
+$$git = "git.exe show ";
+$$cmd = $$git + $$commit_hash + ":" + basename2 + " > " + $$file;
+run $$cmd;
+if (result == false) {
+  message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
+  endmacro;
 }
 
-// toolの実行する
-$$cmd = $$tool + " " + filename2 + " " + $$file;
+// 比較ツールを実行する
+$$cmd = $$tool + " " + $$file + " " + filename2;
 run $$cmd;
 if (result == false) {
   message "比較ツール実行時にエラーが発生しました。\n" + $$cmd;
