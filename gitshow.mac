@@ -7,18 +7,17 @@ if (strlen($$commit_hash) != 40) {
   message "コミットハッシュがクリップボードにありません。";
   endmacro;
 }
-$$file = getenv("TMP") + "\\" + basename + $$commit_hash + "." + filetype;
+$$file = getenv("TMP") + "\\" + basename2 + $$commit_hash + "." + filetype;
 
-if (existfile($$file) == false) {
-  // コミットハッシュの内容をファイルにする
-  $$git = "git.exe show ";
-  $$cmd = $$git + $$commit_hash + ":" + basename + " > " + $$file;
-  run $$cmd;
-  if (result == false) {
-    message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
-    endmacro;
-  }
+// コミットハッシュの内容をファイルにする
+$$git = "git.exe show ";
+$$cmd = $$git + $$commit_hash + ":" + basename2 + " > " + $$file;
+run $$cmd;
+if (result == false) {
+  message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
+  endmacro;
 }
 
+// ファイルにした内容を表示する
 openfile "/r " + $$file;
 endmacro;
