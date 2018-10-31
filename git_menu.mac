@@ -1,20 +1,20 @@
 ﻿// 各マクロを呼び出すメニュー
-$$command[0] = "gitdiff.mac";
-$$command[1] = "gitlog.mac";
-$$command[2] = "gitlog_format.mac";
-$$command[3] = "gitlogp.mac";
-$$command[4] = "gitshowdiff.mac";
-$$command[5] = "gitshow.mac";
-$$command[6] = "gitblame.mac";
+$$command[0] = "gitshowdiff.mac";
+$$command[1] = "gitshow.mac";
+$$command[2] = "gitblame.mac";
+$$command[3] = "gitdiff.mac";
+$$command[4] = "gitlog.mac";
+$$command[5] = "gitlog_format.mac";
+$$command[6] = "gitlogp.mac";
 $$command[7] = "gitlstatus.mac";
 $$command[8] = "github_search.mac";
-$$menu[0] = "(&D)\t git diff";
-$$menu[1] = "(&L)\t git log";
-$$menu[2] = "(&F)\t git log format";
-$$menu[3] = "(&P)\t git log -p ";
-$$menu[4] = "(&G)\t difftool git show";
-$$menu[5] = "(&W)\t git show";
-$$menu[6] = "(&B)\t git blame";
+$$menu[0] = "(&G)\t difftool git show";
+$$menu[1] = "(&W)\t git show";
+$$menu[2] = "(&B)\t git blame";
+$$menu[3] = "(&D)\t git diff";
+$$menu[4] = "(&L)\t git log";
+$$menu[5] = "(&F)\t git log format";
+$$menu[6] = "(&P)\t git log -p ";
 $$menu[7] = "(&S)\t git status";
 $$menu[8] = "(&G)\t github search";
 
