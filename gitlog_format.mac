@@ -1,6 +1,6 @@
 // git log format ファイル名
 
-$$git = "git.exe log --date=iso --pretty=format:\"[%ad] %H %an : %s\" ";
+$$git = "git.exe log --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 runex $$cmd,0,0,"",7,"",0,"",2,$$dir,0,0,encode;

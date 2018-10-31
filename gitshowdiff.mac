@@ -10,7 +10,7 @@ if (existfile($$tool) == false) {
 disabledraw;
 
 // メニュー用にログを取得する
-$$git = "git.exe log --date=iso --pretty=format:\"[%ad] %H %an : %s\" ";
+$$git = "git.exe log --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 ##current_handle = hidemaruhandle(0);
@@ -48,9 +48,9 @@ menuarray $$menu,##count;
 $$commit_hash = "";
 if (##idx > ##start) {
   // 選択されたメニューからコミットハッシュを取り出す
-  $$commit_hash = midstr($$menu[##idx - 1], 28, 40);
+  $$commit_hash = midstr($$menu[##idx - 1], 28, 7);
 }
-if (strlen($$commit_hash) != 40) {
+if (strlen($$commit_hash) != 7) {
   endmacro;
 }
 
