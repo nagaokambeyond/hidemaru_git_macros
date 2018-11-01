@@ -1,9 +1,11 @@
 ﻿// git show
 
+##log_max_count = 20;
+
 disabledraw;
 
 // メニュー用にログを取得する
-$$git = "git.exe log --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
+$$git = "git.exe log -" + str(##log_max_count) + " --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 ##current_handle = hidemaruhandle(0);
@@ -16,10 +18,10 @@ if (existfile($$log, 2) == 0) {
 // 隠しタブにログを表示する
 openfile "/h " + $$log;
 ##tmp_handle = hidemaruhandle(0);
-##start = 1;
-##count = ##start;
+##start_row_index = 1;
+##count = ##start_row_index;
 $$menu[0] = "■■■表示するコミットを選択してください";
-while (##count <= 20 + ##start) {
+while (##count <= ##log_max_count + ##start_row_index) {
   if (result == false){
     break;
   }
@@ -39,7 +41,7 @@ menuarray $$menu,##count;
 ##idx = result;
 
 $$commit_hash = "";
-if (##idx > ##start) {
+if (##idx > ##start_row_index) {
   // 選択されたメニューからコミットハッシュを取り出す
   $$commit_hash = midstr($$menu[##idx - 1], 28, 7);
 }
