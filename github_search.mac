@@ -2,7 +2,10 @@
 
 $url = "https://github.com/search?q=";
 beginclipboardread;
-copyword;
-$word = getclipboard;
-openbyshell $url + $word;
+if (selecting == 0) {
+  copyword;
+} else {
+  copy;
+}
+openbyshell $url + getclipboard;
 endmacro;
