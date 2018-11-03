@@ -12,7 +12,7 @@ if (existfile($$tool) == false) {
 disabledraw;
 
 // メニュー用にログを取得する
-$$git = "git.exe log -" + str(##log_max_count) + " --date=iso --pretty=format:\"[%ad] %h %an : %s\" " ;
+$$git = "git.exe log -" + str(##log_max_count) + " --no-merges --date=iso --pretty=format:\"[%ad] %h %an : %s\" " ;
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 ##current_handle = hidemaruhandle(0);
