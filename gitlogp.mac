@@ -6,4 +6,12 @@ $$dir = directory2 + "\\";
 $$file = getenv("TMP") + "\\" + basename2 + "logp" + "." + filetype;
 runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
 openfile "/r " + $$file;
+
+// 実行コマンド表示する
+##mode = 0;
+if (tabmode) {
+  ##mode = 3;
+}
+title $$cmd,##mode;
+title -1,##mode;
 endmacro;

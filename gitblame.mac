@@ -9,6 +9,13 @@ if (selecting == 1){
 $$cmd = $git + filename2;
 $$file = getenv("TMP") + "\\" + basename2 + "_blame" + "." + filetype;
 run $$cmd + " > " + $$file;
-
 openfile "/r " + $$file;
+
+// 実行コマンド表示する
+##mode = 0;
+if (tabmode) {
+  ##mode = 3;
+}
+title $$cmd,##mode;
+title -1,##mode;
 endmacro;

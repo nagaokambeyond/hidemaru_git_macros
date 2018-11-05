@@ -58,7 +58,13 @@ if (result == false) {
   message "gitのコマンド実行時にエラーが発生しました。\n" + $$cmd;
   endmacro;
 }
-
-// ファイルにした内容を表示する
 openfile "/r " + $$file;
+
+// 実行コマンド表示する
+##mode = 0;
+if (tabmode) {
+  ##mode = 3;
+}
+title $$cmd,##mode;
+title -1,##mode;
 endmacro;
