@@ -3,5 +3,7 @@
 $$git = "git.exe log -p ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
-runex $$cmd,0,0,"",7,"",0,"",2,$$dir,0,0,encode;
+$$file = getenv("TMP") + "\\" + basename2 + "logp" + "." + filetype;
+runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
+openfile "/r " + $$file;
 endmacro;

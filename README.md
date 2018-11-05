@@ -70,7 +70,6 @@ git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名
 
 ### gitlogp.mac
 * 詳細なログを表示する
-* 実行結果は、アウトプット枠に出力する
 ```
 git log -p ファイル名
 ```
