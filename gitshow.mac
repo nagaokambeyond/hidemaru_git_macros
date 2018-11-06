@@ -1,6 +1,6 @@
 ﻿// git show
 
-##log_max_count = 20;
+##log_max_count = 100;
 
 disabledraw;
 

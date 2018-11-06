@@ -7,7 +7,7 @@ if (existfile($$tool) == false) {
   endmacro;
 }
 
-##log_max_count = 20;
+##log_max_count = 100;
 
 disabledraw;
 
