@@ -2,11 +2,11 @@
 $$cmd[0] = "gitshowdiff.mac";	$$menu[0] = "(&G)\t git show + diff";
 $$cmd[1] = "gitshow.mac";	$$menu[1] = "(&W)\t git show";
 $$cmd[2] = "gitblame.mac";	$$menu[2] = "(&B)\t git blame";
-$$cmd[3] = "gitdiff.mac";	$$menu[3] = "(&D)\t git diff";
-$$cmd[4] = "gitlog.mac";	$$menu[4] = "(&L)\t git log";
-$$cmd[5] = "gitlog_format.mac";	$$menu[5] = "(&F)\t git log format";
-$$cmd[6] = "gitlogp.mac";	$$menu[6] = "(&P)\t git log -p ";
-$$cmd[7] = "gitlstatus.mac";	$$menu[7] = "(&S)\t git status";
+$$cmd[3] = "gitlogp.mac";	$$menu[3] = "(&P)\t git log -p ";
+$$cmd[4] = "gitlog_format.mac";	$$menu[4] = "(&F)\t git log format";
+$$cmd[5] = "gitlstatus.mac";	$$menu[5] = "(&S)\t git status";
+$$cmd[6] = "gitdiff.mac";	$$menu[6] = "(&D)\t git diff";
+$$cmd[7] = "gitlog.mac";	$$menu[7] = "(&L)\t git log";
 $$cmd[8] = "github_search.mac";	$$menu[8] = "(&G)\t github search";
 
 menuarray $$menu,9;

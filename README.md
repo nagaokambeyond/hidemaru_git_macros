@@ -53,12 +53,10 @@ git blame -L 5,13 ファイル名 > tempファイル名
 hidemaru.exe tempファイル名 /p
 ```
 
-### gitlog.mac
-* シンプルなログを表示する
-* 修正点をつかみたいときに使う
-* 実行結果は、アウトプット枠に出力する
+### gitlogp.mac
+* 詳細なログを表示する
 ```
-git log ファイル名
+git log -p ファイル名
 ```
 
 ### gitlog_format.mac
@@ -68,10 +66,11 @@ git log ファイル名
 git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名
 ```
 
-### gitlogp.mac
-* 詳細なログを表示する
+### gitstatus.mac
+* リポジトリの状況を表示する
+* 実行結果は、アウトプット枠に出力する
 ```
-git log -p ファイル名
+git status
 ```
 
 ### gitdiff.mac
@@ -81,11 +80,12 @@ git log -p ファイル名
 git diff -- ファイル名
 ```
 
-### gitstatus.mac
-* リポジトリの状況を表示する
+### gitlog.mac
+* シンプルなログを表示する
+* 修正点をつかみたいときに使う
 * 実行結果は、アウトプット枠に出力する
 ```
-git status
+git log ファイル名
 ```
 
 ### github_search.mac
