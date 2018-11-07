@@ -1,3 +1,6 @@
+disabledraw;
+disablehistory 0x0041;
+
 if (selecting == 1){
   // git blame -L startlineno, endlinenoファイル名
   $git = "git.exe blame -L " + str(seltopy) + "," + str(selendy) + " ";

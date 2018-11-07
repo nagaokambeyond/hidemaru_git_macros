@@ -1,5 +1,8 @@
 // git log -p ファイル名
 
+disabledraw;
+disablehistory 0x0041;
+
 $$git = "git.exe log -p ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";

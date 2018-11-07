@@ -10,6 +10,7 @@ if (existfile($$tool) == false) {
 ##log_max_count = 100;
 
 disabledraw;
+disablehistory 0x0041;
 
 // メニュー用にログを取得する
 $$git = "git.exe log -" + str(##log_max_count) + " --no-merges --date=iso --pretty=format:\"[%ad] %h %an : %s\" " ;

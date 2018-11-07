@@ -1,11 +1,12 @@
 // githubで検索
 
-$url = "https://github.com/search?q=";
+disabledraw;
+disablehistory 0x0041;
 beginclipboardread;
 if (selecting == 0) {
   copyword;
 } else {
   copy;
 }
-openbyshell $url + getclipboard;
+openbyshell "https://github.com/search?q=" + getclipboard;
 endmacro;
