@@ -1,6 +1,6 @@
 ﻿// git show
 
-##log_max_count = 100;
+##log_max_count = 60;
 
 disabledraw;
 disablehistory 0x0041;
@@ -29,7 +29,7 @@ while (##count <= ##log_max_count + ##start_row_index) {
   beginclipboardread;
   beginlinesel 0;
   copy;
-  $$menu[##count] = getclipboard;
+  $$menu[##count] = leftstr(getclipboard,70);
   down;
   ##count = ##count + 1;
 }

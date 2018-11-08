@@ -8,5 +8,5 @@ if (selecting == 0) {
 } else {
   copy;
 }
-openbyshell "https://github.com/search?q=" + getclipboard;
+openbyshell "https://github.com/search?q=" + leftstr(getclipboard,70);
 endmacro;
