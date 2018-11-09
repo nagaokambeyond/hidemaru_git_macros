@@ -60,7 +60,6 @@ git log -p ファイル名
 
 ### gitlog_format.mac
 * 書式をつけてログを出力する
-* 実行結果は、アウトプット枠に出力する
 ```
 git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名
 ```

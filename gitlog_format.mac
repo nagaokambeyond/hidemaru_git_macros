@@ -3,6 +3,17 @@
 $$git = "git.exe log --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
-runex $$cmd,0,0,"",7,"",0,"",2,$$dir,0,0,encode;
+$$file = getenv("TMP") + "\\" + basename2 + "_logformat" + "." + filetype;
+runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
+openfile "/r " + $$file;
+
+// 実行コマンド表示する
+##mode = 0;
+if (tabmode) {
+  ##mode = 3;
+}
+title $$cmd,##mode;
+title -1,##mode;
+endmacro;
 
 endmacro;
