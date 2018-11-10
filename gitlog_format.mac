@@ -1,9 +1,16 @@
 // git log format ファイル名
 
+$$target_file = "";
+if (argcount > 0) {
+  // 引数あり→呼び出しもとの引数でログをとる
+  // 引数なし→ブランチ全体のログをとる
+  $$target_file = getarg(0);
+}
+
 $$git = "git.exe log --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
-$$cmd = $$git + filename2;
+$$cmd = $$git + $$target_file;
 $$dir = directory2 + "\\";
-$$file = getenv("TMP") + "\\" + basename2 + "_logformat" + "." + filetype;
+$$file = getenv("TMP") + "\\" + $$target_file + "_logformat" + "." + filetype;
 runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
 openfile "/r " + $$file;
 
