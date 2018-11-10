@@ -59,16 +59,12 @@ git log -p ファイル名
 ```
 
 ### gitlog_format.mac
-* 書式をつけてログを出力する
+* 書式をつけてログを表示する
+  * git_menu.macから`git log format all`で起動した場合、現在のブランチ全体を対象にする
 ```
-git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名
-```
-
-### gitstatus.mac
-* リポジトリの状況を表示する
-* 実行結果は、アウトプット枠に出力する
-```
-git status
+git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名 > tempファイル名
+git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s > tempファイル名
+hidemaru.exe tempファイル名 /p
 ```
 
 ### gitdiff.mac
@@ -84,6 +80,13 @@ git diff -- ファイル名
 * 実行結果は、アウトプット枠に出力する
 ```
 git log ファイル名
+```
+
+### gitstatus.mac
+* リポジトリの状況を表示する
+* 実行結果は、アウトプット枠に出力する
+```
+git status
 ```
 
 ### gitbranch-a.mac
