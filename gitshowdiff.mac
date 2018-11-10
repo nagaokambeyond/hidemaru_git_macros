@@ -8,6 +8,7 @@ if (existfile($$tool) == false) {
 }
 
 ##log_max_count = 60;
+##max_width = 70;
 
 disabledraw;
 disablehistory 0x0041;
@@ -22,13 +23,15 @@ runex $$cmd,0,0,"",2,$$log,0,"",2,$$dir,0,0,encode;
 if (existfile($$log, 2) == 0) {
   endmacro;
 }
+$$comment = leftstr("■比較するコミットを選択してください■" + basename2,##max_width);
 
 // 隠しタブにログを表示する
 openfile "/h " + $$log;
 ##tmp_handle = hidemaruhandle(0);
-##start_row_index = 1;
+##start_row_index = 2;
 ##count = ##start_row_index;
-$$menu[0] = "■■■比較するコミットを選択してください";
+$$menu[0] = $$comment;
+$$menu[1] = "\x01";
 while (##count <= ##log_max_count + ##start_row_index) {
   if (result == false){
     break;
@@ -36,7 +39,7 @@ while (##count <= ##log_max_count + ##start_row_index) {
   beginclipboardread;
   beginlinesel 0;
   copy;
-  $$menu[##count] = leftstr(getclipboard,70);
+  $$menu[##count] = leftstr(getclipboard,##max_width);
   down;
   ##count = ##count + 1;
 }
