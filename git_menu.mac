@@ -1,18 +1,20 @@
 ﻿// 各マクロを呼び出すメニュー
-$$cmd[0]  = "gitshowdiff.mac";   $$menu[0]  = "(&T)\t git show+diff " + basename2;     $$args[0]  = basename2;
-$$cmd[1]  = "gitshow.mac";       $$menu[1]  = "(&W)\t git show " + basename2;          $$args[1]  = basename2;
-$$cmd[2]  = "gitblame.mac";      $$menu[2]  = "(&B)\t git blame " + basename2;         $$args[2]  = basename2;
-$$cmd[3]  = "gitlogp.mac";       $$menu[3]  = "(&P)\t git log -p " + basename2;        $$args[3]  = basename2;
-$$cmd[4]  = "gitlog_format.mac"; $$menu[4]  = "(&F)\t git log format " + basename2;    $$args[4]  = basename2;
-$$cmd[5]  = "gitdiff.mac";       $$menu[5]  = "(&D)\t git diff " + basename2;          $$args[5]  = basename2;
-$$cmd[6]  = "gitlog.mac";        $$menu[6]  = "(&L)\t git log " + basename2;           $$args[6]  = basename2;
-$$cmd[7]  = "";                  $$menu[7]  = "\x01";                                  $$args[7]  = "";
-$$cmd[8]  = "gitlog_format.mac"; $$menu[8]  = "(&F)\t git log format all";             $$args[8]  = "";
-$$cmd[9]  = "gitlstatus.mac";    $$menu[9]  = "(&S)\t git status";                     $$args[9]  = "";
-$$cmd[10] = "gitbranch-a.mac";   $$menu[10] = "(&B)\t git branch -a";                  $$args[10] = "";
-$$cmd[11] = "github_search.mac"; $$menu[11] = "(&G)\t github search";                  $$args[11] = "";
+$$cmd[0]  = "";                  $$menu[0]  = leftstr(basename2,70);       $$args[0]  = "";
+$$cmd[1]  = "";                  $$menu[1]  = "\x01";                      $$args[1]  = "";
+$$cmd[2]  = "gitshowdiff.mac";   $$menu[2]  = "(&T)\t git show+diff ";     $$args[2]  = basename2;
+$$cmd[3]  = "gitshow.mac";       $$menu[3]  = "(&W)\t git show ";          $$args[3]  = basename2;
+$$cmd[4]  = "gitblame.mac";      $$menu[4]  = "(&B)\t git blame ";         $$args[4]  = basename2;
+$$cmd[5]  = "gitlogp.mac";       $$menu[5]  = "(&P)\t git log -p ";        $$args[5]  = basename2;
+$$cmd[6]  = "gitlog_format.mac"; $$menu[6]  = "(&F)\t git log format ";    $$args[6]  = basename2;
+$$cmd[7]  = "gitdiff.mac";       $$menu[7]  = "(&D)\t git diff ";          $$args[7]  = basename2;
+$$cmd[8]  = "gitlog.mac";        $$menu[8]  = "(&L)\t git log ";           $$args[8]  = basename2;
+$$cmd[9]  = "";                  $$menu[9]  = "\x01";                      $$args[9]  = "";
+$$cmd[10] = "gitlog_format.mac"; $$menu[10] = "(&F)\t git log format all"; $$args[10] = "";
+$$cmd[11] = "gitlstatus.mac";    $$menu[11] = "(&S)\t git status";         $$args[11] = "";
+$$cmd[12] = "gitbranch-a.mac";   $$menu[12] = "(&B)\t git branch -a";      $$args[12] = "";
+$$cmd[13] = "github_search.mac"; $$menu[13] = "(&G)\t github search";      $$args[13] = "";
 
-menuarray $$menu,12;
+menuarray $$menu,14;
 ##idx = result;
 if (##idx > 0) {
   ##exec_idx = ##idx - 1;
