@@ -1,0 +1,17 @@
+disabledraw;
+disablehistory 0x0041;
+
+$git = "git.exe branch -a > ";
+$$cmd = $git;
+$$file = getenv("TMP") + "\\" + basename2 + "_branch-a" + "." + filetype;
+run $$cmd + " > " + $$file;
+openfile "/r " + $$file;
+
+// 実行コマンド表示する
+##mode = 0;
+if (tabmode) {
+  ##mode = 3;
+}
+title $$cmd,##mode;
+title -1,##mode;
+endmacro;

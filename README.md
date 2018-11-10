@@ -86,6 +86,12 @@ git diff -- ファイル名
 git log ファイル名
 ```
 
+### gitbranch-a.mac
+* ローカルとリモートのブランチを一覧表示する
+```
+git branch -a
+```
+
 ### github_search.mac
 * githubを検索する
   * 未選択の場合、カーソル上の単語で検索
