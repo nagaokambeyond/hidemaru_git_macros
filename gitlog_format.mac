@@ -1,5 +1,8 @@
 // git log format ファイル名
 
+disabledraw;
+disablehistory 0x0041;
+
 $$target_file = "";
 if (argcount > 0) {
   // 引数あり→呼び出しもとの引数でログをとる
@@ -21,6 +24,4 @@ if (tabmode) {
 }
 title $$cmd,##mode;
 title -1,##mode;
-endmacro;
-
 endmacro;

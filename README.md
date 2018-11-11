@@ -82,17 +82,23 @@ git diff -- ファイル名
 git log ファイル名
 ```
 
-### gitstatus.mac
-* リポジトリの状況を表示する
-* 実行結果は、アウトプット枠に出力する
+### gitlog-stat.mac
+* 影響受けたファイルを表示する
 ```
-git status
+git log --stat
 ```
 
 ### gitbranch-a.mac
 * ローカルとリモートのブランチを一覧表示する
 ```
 git branch -a
+```
+
+### gitstatus.mac
+* リポジトリの状況を表示する
+* 実行結果は、アウトプット枠に出力する
+```
+git status
 ```
 
 ### github_search.mac
