@@ -84,6 +84,7 @@ git log ファイル名
 
 ### gitlog-stat.mac
 * 影響受けたファイルを表示する
+* 条件を指定できる
 ```
 git log --stat
 ```

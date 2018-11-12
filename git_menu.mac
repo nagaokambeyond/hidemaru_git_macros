@@ -10,7 +10,7 @@ $$cmd[7]  = "gitdiff.mac";       $$menu[7]  = "(&D)\t git diff ";          $$arg
 $$cmd[8]  = "gitlog.mac";        $$menu[8]  = "(&L)\t git log ";           $$args[8]  = basename2;
 $$cmd[9]  = "";                  $$menu[9]  = "\x01";                      $$args[9]  = "";
 $$cmd[10] = "";                  $$menu[10] = "ブランチ用";                $$args[10] = "";
-$$cmd[11] = "";                  $$menu[11] = "\x01";                      $$args[11]  = "";
+$$cmd[11] = "";                  $$menu[11] = "\x01";                      $$args[11] = "";
 $$cmd[12] = "gitlog-stat.mac";   $$menu[12] = "(&S)\t git log --stat";     $$args[12] = "";
 $$cmd[13] = "gitlog_format.mac"; $$menu[13] = "(&F)\t git log format all"; $$args[13] = "";
 $$cmd[14] = "gitbranch-a.mac";   $$menu[14] = "(&B)\t git branch -a";      $$args[14] = "";

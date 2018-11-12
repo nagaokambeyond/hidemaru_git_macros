@@ -1,9 +1,18 @@
-// git log --stat
+﻿// git log --stat
 
 disabledraw;
 disablehistory 0x0041;
 
+$$condition = input("git log --stat\n条件を指定できます。");
+if (result == false) {
+  endmacro;
+}
+
 $$git = "git.exe log --stat";
+if ($$condition != "") {
+  $$git = $$git + " --grep " + left($$condition, 70); 
+}
+
 $$cmd = $$git;
 $$dir = directory2 + "\\";
 $$log = getenv("TMP") + "\\_logstat" + ".all" ;
