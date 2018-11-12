@@ -1,17 +1,16 @@
 ﻿// git log --stat
 
-disabledraw;
-disablehistory 0x0041;
-
-$$condition = input("git log --stat\n条件を指定できます。");
+$$git = "git.exe log --stat";
+$$condition = input($$git + "\n条件を指定できます。");
 if (result == false) {
   endmacro;
 }
-
-$$git = "git.exe log --stat";
 if ($$condition != "") {
-  $$git = $$git + " --grep " + left($$condition, 70); 
+  $$git = $$git + " --grep " + leftstr($$condition, 70); 
 }
+
+disabledraw;
+disablehistory 0x0041;
 
 $$cmd = $$git;
 $$dir = directory2 + "\\";
