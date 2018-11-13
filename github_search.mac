@@ -1,4 +1,4 @@
-// githubで検索
+﻿// githubで検索
 
 disabledraw;
 disablehistory 0x0041;
@@ -8,5 +8,10 @@ if (selecting == 0) {
 } else {
   copy;
 }
-openbyshell "https://github.com/search?q=" + leftstr(getclipboard,70);
+$$arg = getclipboard;
+$$word = input("githubで検索", $$arg);
+if ((result == false) || ($$word == "")) {
+  endmacro;
+}
+openbyshell "https://github.com/search?q=" + leftstr($$word, 70);
 endmacro;
