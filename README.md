@@ -52,7 +52,7 @@ git blame -L 5,13 ファイル名 > tempファイル名
 hidemaru.exe tempファイル名 /p
 ```
 
-### gitlogp.mac
+### gitlog-p.mac
 * 詳細なログを表示する
 ```
 git log -p ファイル名
@@ -84,7 +84,7 @@ git log ファイル名
 
 ### gitlog-stat.mac
 * 影響受けたファイルを表示する
-* 条件を指定できる
+* 条件を入力できる
 ```
 git log --stat
 ```

@@ -4,7 +4,7 @@ $$cmd[1]  = "";                  $$menu[1]  = "\x01";                      $$arg
 $$cmd[2]  = "gitshowdiff.mac";   $$menu[2]  = "(&S)\t git show+diff ";     $$args[2]  = basename2;
 $$cmd[3]  = "gitshow.mac";       $$menu[3]  = "(&S)\t git show ";          $$args[3]  = basename2;
 $$cmd[4]  = "gitblame.mac";      $$menu[4]  = "(&B)\t git blame ";         $$args[4]  = basename2;
-$$cmd[5]  = "gitlogp.mac";       $$menu[5]  = "(&L)\t git log -p ";        $$args[5]  = basename2;
+$$cmd[5]  = "gitlog-p.mac";      $$menu[5]  = "(&L)\t git log -p ";        $$args[5]  = basename2;
 $$cmd[6]  = "gitlog_format.mac"; $$menu[6]  = "(&F)\t git log format ";    $$args[6]  = basename2;
 $$cmd[7]  = "gitdiff.mac";       $$menu[7]  = "(&D)\t git diff ";          $$args[7]  = basename2;
 $$cmd[8]  = "gitlog.mac";        $$menu[8]  = "(&L)\t git log ";           $$args[8]  = basename2;
