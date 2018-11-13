@@ -55,15 +55,15 @@ hidemaru.exe tempファイル名 /p
 ### gitlog-p.mac
 * 詳細なログを表示する
 ```
-git log -p ファイル名
+git.exe log -p --follow ファイル名
 ```
 
 ### gitlog_format.mac
 * 書式をつけてログを表示する
   * git_menu.macから`git log format all`で起動した場合、現在のブランチ全体を対象にする
 ```
-git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s ファイル名 > tempファイル名
-git.exe log --date=iso --pretty=format:"[%ad] %H %an : %s > tempファイル名
+git.exe log --follow --date=iso --pretty=format:"[%ad] %h %an : %s" ファイル名 > tempファイル名
+git.exe log --follow --date=iso --pretty=format:"[%ad] %h %an : %s" > tempファイル名
 hidemaru.exe tempファイル名 /p
 ```
 
@@ -82,7 +82,7 @@ git diff -- ファイル名
 git log ファイル名
 ```
 
-### gitlog-stat.mac
+### gitlog--stat.mac
 * 影響受けたファイルを表示する
 * 条件を入力できる
 ```
