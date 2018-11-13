@@ -15,9 +15,12 @@ $$cmd[12] = "gitlog--stat.mac";  $$menu[12] = "(&S)\t git log --stat";     $$arg
 $$cmd[13] = "gitlog_format.mac"; $$menu[13] = "(&F)\t git log format all"; $$args[13] = "";
 $$cmd[14] = "gitbranch-a.mac";   $$menu[14] = "(&B)\t git branch -a";      $$args[14] = "";
 $$cmd[15] = "gitlstatus.mac";    $$menu[15] = "(&S)\t git status";         $$args[15] = "";
-$$cmd[16] = "github_search.mac"; $$menu[16] = "(&G)\t github search";      $$args[16] = "";
+$$cmd[16] = "";                  $$menu[16] = "\x01";                      $$args[16] = "";
+$$cmd[17] = "";                  $$menu[17] = "その他";                    $$args[17] = "";
+$$cmd[18] = "";                  $$menu[18] = "\x01";                      $$args[18] = "";
+$$cmd[19] = "github_search.mac"; $$menu[19] = "(&G)\t github search";      $$args[19] = "";
 
-menuarray $$menu,17;
+menuarray $$menu,20;
 ##idx = result;
 if (##idx > 0) {
   ##exec_idx = ##idx - 1;
