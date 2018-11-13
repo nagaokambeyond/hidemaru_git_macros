@@ -14,7 +14,7 @@ disabledraw;
 disablehistory 0x0041;
 
 // メニュー用にログを取得する
-$$git = "git.exe log -" + str(##log_max_count) + " --no-merges --date=short --pretty=format:\"[%ad] %h %an : %s\" " ;
+$$git = "git.exe log -" + str(##log_max_count) + " --follow --no-merges --date=short --pretty=format:\"[%ad] %h %an : %s\" " ;
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 ##current_handle = hidemaruhandle(0);

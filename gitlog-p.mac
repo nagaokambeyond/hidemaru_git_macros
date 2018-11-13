@@ -3,7 +3,7 @@
 disabledraw;
 disablehistory 0x0041;
 
-$$git = "git.exe log -p ";
+$$git = "git.exe log -p --follow ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 $$file = getenv("TMP") + "\\" + basename2 + "logp" + "." + filetype;
