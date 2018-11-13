@@ -6,7 +6,7 @@ disablehistory 0x0041;
 $$git = "git.exe log -p --follow ";
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
-$$file = getenv("TMP") + "\\" + basename2 + "logp" + "." + filetype;
+$$file = getenv("TMP") + "\\" + basename2 + "logp" + filetype;
 runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
 openfile "/r " + $$file;
 

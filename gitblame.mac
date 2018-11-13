@@ -10,7 +10,7 @@ if (selecting == 1){
 }
 
 $$cmd = $git + filename2;
-$$file = getenv("TMP") + "\\" + basename2 + "_blame" + "." + filetype;
+$$file = getenv("TMP") + "\\" + basename2 + "_blame" + filetype;
 run $$cmd + " > " + $$file;
 openfile "/r " + $$file;
 

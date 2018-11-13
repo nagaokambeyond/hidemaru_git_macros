@@ -18,7 +18,7 @@ $$git = "git.exe log -" + str(##log_max_count) + " --follow --no-merges --date=s
 $$cmd = $$git + filename2;
 $$dir = directory2 + "\\";
 ##current_handle = hidemaruhandle(0);
-$$log = getenv("TMP") + "\\" + basename2 + "log" + "." + filetype;
+$$log = getenv("TMP") + "\\" + basename2 + "log" + filetype;
 runex $$cmd,0,0,"",2,$$log,0,"",2,$$dir,0,0,encode;
 if (existfile($$log, 2) == 0) {
   endmacro;

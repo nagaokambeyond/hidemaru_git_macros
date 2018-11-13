@@ -13,7 +13,7 @@ if (argcount > 0) {
 $$git = "git.exe log --follow --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
 $$cmd = $$git + $$target_file;
 $$dir = directory2 + "\\";
-$$file = getenv("TMP") + "\\" + $$target_file + "_logformat" + "." + filetype;
+$$file = getenv("TMP") + "\\" + $$target_file + "_logformat" + filetype;
 runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
 openfile "/r " + $$file;
 

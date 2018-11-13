@@ -52,7 +52,7 @@ if (##idx > ##start_row_index) {
 if (strlen($$commit_hash) != 7) {
   endmacro;
 }
-$$file = getenv("TMP") + "\\" + basename2 + $$commit_hash + "." + filetype;
+$$file = getenv("TMP") + "\\" + basename2 + $$commit_hash + filetype;
 
 // コミットハッシュの内容をファイルにする
 $$git = "git.exe show ";

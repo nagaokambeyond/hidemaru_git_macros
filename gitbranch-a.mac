@@ -3,7 +3,7 @@ disablehistory 0x0041;
 
 $git = "git.exe branch -a > ";
 $$cmd = $git;
-$$file = getenv("TMP") + "\\" + basename2 + "_branch-a" + "." + filetype;
+$$file = getenv("TMP") + "\\" + basename2 + "_branch-a" + filetype;
 run $$cmd + " > " + $$file;
 openfile "/r " + $$file;
 
