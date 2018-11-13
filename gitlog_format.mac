@@ -10,7 +10,11 @@ if (argcount > 0) {
   $$target_file = getarg(0);
 }
 
-$$git = "git.exe log --follow --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
+if ($$target_file == "") {
+  $$git = "git.exe log --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
+} else {
+  $$git = "git.exe log --follow --date=iso --pretty=format:\"[%ad] %h %an : %s\" ";
+}
 $$cmd = $$git + $$target_file;
 $$dir = directory2 + "\\";
 $$file = getenv("TMP") + "\\" + $$target_file + "_logformat" + filetype;
