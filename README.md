@@ -107,6 +107,13 @@ git.exe log --date=iso --pretty=format:"[%ad] %h %an : %s" > tempファイル名
 hidemaru.exe tempファイル名 /p
 ```
 
+### git log format graph
+* ログのツリー表示
+* gitlog_format_graph.mac
+```
+git log --graph --oneline --decorate=full --date=short --format="%h [%ad]%d %s @%an"
+```
+
 ### git branch -a
 * ローカルとリモートのブランチを一覧表示する
 * gitbranch-a.mac
@@ -122,8 +129,7 @@ git branch -a
 git status
 ```
 
+## その他
 ### github search
 * githubを検索する
-  * 未選択の場合、カーソル上の単語で検索
-  * 選択中の場合、選択内容で検索
 * github_search.mac
