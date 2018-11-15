@@ -1,0 +1,20 @@
+// git log graph
+
+disabledraw;
+disablehistory 0x0041;
+
+$$git = "git log --graph --oneline --decorate=full --date=short --format=\"%h [%ad]%d %s @%an\" ";
+$$cmd = $$git;
+$$dir = directory2 + "\\";
+$$file = getenv("TMP") + "\\_logformat_graph" + filetype;
+runex $$cmd,0,0,"",2,$$file,0,"",2,$$dir,0,0,encode;
+openfile "/r /f" + str(encode) + " " + $$file ;
+
+// 実行コマンド表示する
+##mode = 0;
+if (tabmode) {
+  ##mode = 3;
+}
+title $$cmd,##mode;
+title -1,##mode;
+endmacro;
