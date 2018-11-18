@@ -1,0 +1,25 @@
+﻿// テスト用一括実行マクロ
+$$cmd[0]  = "gitblame.mac";            $$args[0]  = basename2;
+$$cmd[1]  = "gitlog-p.mac";            $$args[1]  = basename2;
+$$cmd[2]  = "gitlog_format.mac";       $$args[2]  = basename2;
+$$cmd[3]  = "gitlog_format.mac";       $$args[3]  = "";
+$$cmd[4]  = "gitlog_format_graph.mac"; $$args[4]  = "";
+$$cmd[5]  = "gitbranch-a.mac";         $$args[5]  = "";
+
+##current_handle = hidemaruhandle(0);
+##exec_idx = 0;
+while (##exec_idx <= 5) {
+  setactivehidemaru ##current_handle;
+  execmacro currentmacrodirectory + "\\..\\git_macros\\" + $$cmd[##exec_idx], $$args[##exec_idx];
+  ##exec_idx = ##exec_idx + 1;
+}
+
+
+
+//$$cmd[0]  = "gitshowdiff.mac";         $$args[0]  = basename2;
+//$$cmd[1]  = "gitshow.mac";             $$args[1]  = basename2;
+//$$cmd[2]  = "gitlog--stat.mac";        $$args[2]  = "";
+//$$cmd[3]  = "github_search.mac";       $$args[3]  = "";
+//$$cmd[4]  = "gitdiff.mac";             $$args[4]  = basename2;
+//$$cmd[5]  = "gitlog.mac";              $$args[5]  = basename2;
+//$$cmd[6]  = "gitlstatus.mac";          $$args[6]  = "";
