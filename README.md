@@ -22,6 +22,7 @@
   * git log --statは数秒待つことがあるため、条件を指定することを薦める
 * 現時点で一部のgitコマンドには対応していない
 ```
+git branch ブランチ名
 git push
 git fetch
 git pull
@@ -50,7 +51,6 @@ git show コミットハッシュ:ファイル名 > tempファイル名
 * gitshow.mac
 ```
 git show コミットハッシュ:ファイル名 > tempファイル名
-hidemaru.exe tempファイル名 /p
 ```
 
 ### git blame
@@ -61,7 +61,6 @@ hidemaru.exe tempファイル名 /p
 ```
 git blame ファイル名 > tempファイル名
 git blame -L 5,13 ファイル名 > tempファイル名
-hidemaru.exe tempファイル名 /p
 ```
 
 ### git log -p
@@ -76,7 +75,6 @@ git.exe log -p --follow ファイル名
 * gitlog_format.mac
 ```
 git.exe log --follow --date=iso --pretty=format:"[%ad] %h %an : %s" ファイル名 > tempファイル名
-hidemaru.exe tempファイル名 /p
 ```
 
 ### git diff
@@ -110,7 +108,6 @@ git log --stat
 * gitlog_format.mac
 ```
 git.exe log --date=iso --pretty=format:"[%ad] %h %an : %s" > tempファイル名
-hidemaru.exe tempファイル名 /p
 ```
 
 ### git log format graph
