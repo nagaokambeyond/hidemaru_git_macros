@@ -1,0 +1,16 @@
+// git commit 
+
+$$default_msg = date + " " + time;
+$$msg = input("commit message", $$default_msg);
+if (result == false) {
+  return;
+}
+
+$$target_file = getarg(0);
+$$cmd = "git.exe add .";
+runex $$cmd,1,0,"",0,"",0,"",1,"",2,0,encode;
+
+$$cmd = "git.exe commit -m \"" + $$msg + "\" ";
+runex $$cmd,0,0,"",0,"",0,"",1,"",2,0,encode;
+
+endmacro;
