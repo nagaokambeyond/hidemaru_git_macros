@@ -144,4 +144,4 @@ git status
 ## その他
 ### github search
 * githubを検索する
-* github_search.mac
+* web_search.mac
