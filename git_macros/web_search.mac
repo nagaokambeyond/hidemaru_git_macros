@@ -1,0 +1,24 @@
+﻿// webで検索
+
+disabledraw;
+disablehistory 0x0041;
+beginclipboardread;
+if (selecting == 0) {
+  copyword;
+} else {
+  copy;
+}
+$$site = getarg(0);
+$$arg = getclipboard;
+$$word = input($$site + "で検索", $$arg);
+if ((result == false) || ($$word == "")) {
+  endmacro;
+}
+$$url = "";
+if ($$site == "github") {
+  $$url = "https://github.com/search?q=";
+} else {
+  $$url = "https://google.com/search?q=";
+}
+openbyshell $$url + leftstr($$word, 70);
+endmacro;

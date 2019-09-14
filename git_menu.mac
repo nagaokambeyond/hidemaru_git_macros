@@ -9,7 +9,7 @@ $$cmd[6]  = "gitlog_format.mac";       $$menu[6]  = "(&F)\t git log format (書�
 $$cmd[7]  = "gitdiff.mac";             $$menu[7]  = "(&D)\t git diff (未コミット差分表示)";             $$args[7]  = basename2;
 $$cmd[8]  = "gitlog.mac";              $$menu[8]  = "(&L)\t git log (アウトプット枠にログ表示)";        $$args[8]  = basename2;
 $$cmd[9]  = "";                        $$menu[9]  = "\x01";                                             $$args[9]  = "";
-$$cmd[10] = "gitcommit.mac";           $$menu[10] = "(&C)\t git commit (コミット)";                     $$args[10] = basename2;
+$$cmd[10] = "gitcommit.mac";           $$menu[10] = "(&C)\t git commit (コミット)";                     $$args[10] = "";
 $$cmd[11] = "";                        $$menu[11] = "\x01";                                             $$args[11] = "";
 $$cmd[12] = "";                        $$menu[12] = "🔀ブランチ用";                                     $$args[12] = "";
 $$cmd[13] = "";                        $$menu[13] = "\x01";                                             $$args[13] = "";
@@ -21,9 +21,10 @@ $$cmd[18] = "gitlstatus.mac";          $$menu[18] = "(&S)\t git status (ブラ�
 $$cmd[19] = "";                        $$menu[19] = "\x01";                                             $$args[19] = "";
 $$cmd[20] = "";                        $$menu[20] = "🔍その他";                                         $$args[20] = "";
 $$cmd[21] = "";                        $$menu[21] = "\x01";                                             $$args[21] = "";
-$$cmd[22] = "github_search.mac";       $$menu[22] = "(&G)\t github search (github検索)";                $$args[22] = "";
+$$cmd[22] = "web_search.mac";          $$menu[22] = "(&G)\t google search";                             $$args[22] = "google";
+$$cmd[23] = "web_search.mac";          $$menu[23] = "(&G)\t github search";                             $$args[23] = "github";
 
-menuarray $$menu,23;
+menuarray $$menu,24;
 ##idx = result;
 if (##idx > 0) {
   ##exec_idx = ##idx - 1;
