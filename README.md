@@ -4,8 +4,8 @@
 ## 動作確認した環境💻
 * git 2.19.1
   * `git.exe`へのパスが通っていること
-* 秀丸エディタ 8.8.8 🆕
-* WinMerge 日本語版 2.16.0+-jp-13 🆕
+* 秀丸エディタ 8.8.8
+* WinMerge 日本語版 2.16.0+-jp-13
 
 ## インストール方法🔧
 * コマンドラインからローカルにクローンする
@@ -26,7 +26,6 @@ git branch ブランチ名
 git push
 git fetch
 git pull
-git commit
 git archive
 git merge
 ```
@@ -93,6 +92,16 @@ git diff -- ファイル名
 ```
 git log ファイル名
 ```
+
+### git add+commit 🆕
+
+* コミットしたいときに使う
+* gitcommit.mac
+```
+git add .
+git commit -m メッセージ
+```
+
 
 ## ブランチ用：アクティブなブランチに対して実行する
 ### git log --stat
